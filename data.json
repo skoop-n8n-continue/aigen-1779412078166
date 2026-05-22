@@ -1,0 +1,182 @@
+{
+  "app_id": "aigen-1779412078166",
+  "document_version": 1,
+  "sections": {
+    "app_settings": {
+      "primary_color": {
+        "type": "color",
+        "label": "Primary Color",
+        "value": "#D32F2F"
+      },
+      "secondary_color": {
+        "type": "color",
+        "label": "Secondary Color",
+        "value": "#FBC02D"
+      },
+      "background_color": {
+        "type": "color",
+        "label": "Background Color",
+        "value": "#FAF8F5"
+      },
+      "text_color": {
+        "type": "color",
+        "label": "Text Color",
+        "value": "#212121"
+      },
+      "lunch_rush_start": {
+        "type": "number",
+        "label": "Lunch Rush Start Hour (24h)",
+        "value": 11,
+        "meta": { "format": "integer" }
+      },
+      "lunch_rush_end": {
+        "type": "number",
+        "label": "Lunch Rush End Hour (24h)",
+        "value": 14,
+        "meta": { "format": "integer" }
+      },
+      "late_night_start": {
+        "type": "number",
+        "label": "Late Night Start Hour (24h)",
+        "value": 21,
+        "meta": { "format": "integer" }
+      },
+      "dim_late_night": {
+        "type": "boolean",
+        "label": "Dim Screen for Late Night",
+        "value": true
+      }
+    },
+    "storefront": {
+      "store_name": {
+        "type": "text",
+        "label": "Store Name",
+        "value": "Two Brothers Burgers"
+      },
+      "tagline": {
+        "type": "text",
+        "label": "Tagline",
+        "value": "Fresh. Fast. Local."
+      },
+      "logo": {
+        "type": "file",
+        "label": "Store Logo",
+        "value": "assets/logo_k3l4m5.png",
+        "meta": {
+          "accepted_formats": ["png", "jpg", "svg"],
+          "path": "assets/"
+        }
+      },
+      "daily_special_title": {
+        "type": "text",
+        "label": "Daily Special Title",
+        "value": "Today's Special: The Firehouse"
+      },
+      "daily_special_desc": {
+        "type": "textarea",
+        "label": "Daily Special Description",
+        "value": "Spicy pepper jack, roasted jalapeños, and our secret blazing sauce. Comes with fries!"
+      },
+      "daily_special_price": {
+        "type": "number",
+        "label": "Daily Special Price",
+        "value": 12.99,
+        "meta": { "format": "currency" }
+      }
+    },
+    "categories": {
+      "type": "collection",
+      "label": "Menu Categories",
+      "item_schema": {
+        "id": { "type": "text", "label": "ID" },
+        "name": { "type": "text", "label": "Category Name" }
+      },
+      "value": [
+        { "id": "cat_a1b2c3", "name": "Signature Burgers" },
+        { "id": "cat_d4e5f6", "name": "Combos" },
+        { "id": "cat_g7h8i9", "name": "Sides" },
+        { "id": "cat_j1k2l3", "name": "Drinks" }
+      ]
+    },
+    "products": {
+      "type": "collection",
+      "label": "Menu Items",
+      "item_schema": {
+        "id": { "type": "text", "label": "ID" },
+        "name": { "type": "text", "label": "Item Name" },
+        "description": { "type": "textarea", "label": "Description" },
+        "price": { "type": "number", "label": "Price", "meta": { "format": "currency" } },
+        "category": { "type": "linked", "label": "Category", "meta": { "collection": "categories", "display_field": "name" } },
+        "is_combo": { "type": "boolean", "label": "Is Combo Deal" },
+        "available_late_night": { "type": "boolean", "label": "Available Late Night" },
+        "thumbnail": {
+          "type": "file",
+          "label": "Photo",
+          "meta": { "accepted_formats": ["jpg", "png", "webp"], "path": "assets/products/" }
+        }
+      },
+      "value": [
+        {
+          "id": "prod_m1n2o3",
+          "name": "The Classic",
+          "description": "Lettuce, tomato, pickles, house sauce",
+          "price": 6.99,
+          "category": "cat_a1b2c3",
+          "is_combo": false,
+          "available_late_night": true,
+          "thumbnail": "assets/products/prod_m1n2o3_thumb_x1y2z3.jpg"
+        },
+        {
+          "id": "prod_p4q5r6",
+          "name": "Double Trouble",
+          "description": "Two patties, double cheese, bacon",
+          "price": 9.49,
+          "category": "cat_a1b2c3",
+          "is_combo": false,
+          "available_late_night": true,
+          "thumbnail": "assets/products/prod_p4q5r6_thumb_a4b5c6.jpg"
+        },
+        {
+          "id": "prod_s7t8u9",
+          "name": "Classic Combo",
+          "description": "Classic burger, fries, and a drink",
+          "price": 10.99,
+          "category": "cat_d4e5f6",
+          "is_combo": true,
+          "available_late_night": false,
+          "thumbnail": "assets/products/prod_s7t8u9_thumb_d7e8f9.jpg"
+        },
+        {
+          "id": "prod_v1w2x3",
+          "name": "Crispy Fries",
+          "description": "Golden and perfectly salted",
+          "price": 2.99,
+          "category": "cat_g7h8i9",
+          "is_combo": false,
+          "available_late_night": true,
+          "thumbnail": "assets/products/prod_v1w2x3_thumb_g1h2i3.jpg"
+        },
+        {
+          "id": "prod_y4z5a6",
+          "name": "Onion Rings",
+          "description": "Thick cut, beer battered",
+          "price": 3.99,
+          "category": "cat_g7h8i9",
+          "is_combo": false,
+          "available_late_night": true,
+          "thumbnail": "assets/products/prod_y4z5a6_thumb_j4k5l6.jpg"
+        },
+        {
+          "id": "prod_b7c8d9",
+          "name": "Fountain Drink",
+          "description": "Assorted sodas and iced tea",
+          "price": 1.99,
+          "category": "cat_j1k2l3",
+          "is_combo": false,
+          "available_late_night": true,
+          "thumbnail": "assets/products/prod_b7c8d9_thumb_m7n8o9.jpg"
+        }
+      ]
+    }
+  }
+}

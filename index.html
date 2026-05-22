@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Menu Board</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-container">
+
+        <header class="header">
+            <div class="logo-container">
+                <img class="logo" data-bind-src="storefront.logo" alt="Store Logo">
+                <div class="store-info">
+                    <h1 class="store-name" data-bind-text="storefront.store_name"></h1>
+                    <p class="tagline" data-bind-text="storefront.tagline"></p>
+                </div>
+            </div>
+            <div class="mode-indicator" id="mode-indicator">
+                <!-- Text updated by JS -->
+            </div>
+            <div class="clock" id="clock">12:00 PM</div>
+        </header>
+
+        <main class="main-content">
+            <!-- Daily Special Section -->
+            <section class="special-section">
+                <div class="special-banner">
+                    <h2 class="special-title" data-bind-text="storefront.daily_special_title"></h2>
+                    <div class="special-details">
+                        <p class="special-desc" data-bind-text="storefront.daily_special_desc"></p>
+                        <span class="special-price" data-bind-currency="storefront.daily_special_price"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Menu Grid -->
+            <div class="menu-layout" id="menu-layout">
+                <!-- Categories and products injected by JS -->
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
